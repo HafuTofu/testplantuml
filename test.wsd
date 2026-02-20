@@ -1,0 +1,158 @@
+@startuml Tester
+skinparam style strictuml
+skinparam sequenceMessageAlign center
+hide empty members
+' User -> backend : request data
+' backend -> datas : query data
+' datas -> backend : return data
+' backend -> User : return response
+
+class SIRENA_UNJ {
+    Pengajuan Pembayaran
+    Monev Keuangan
+    Permintaan Slip Gaji
+    Permintaan eFaktur
+    Permintaan LHI
+    Permintaan Kwitansi
+    Laporan Keuangan
+}
+
+class SAKU_UNJ {
+    Pendataan Barang Masuk
+    Pendataan Barang Keluar
+    Perjanjian Kinerja Rektor 
+    Unit/Fakultas 
+    Pembuatan E-POK 
+    Monev Anggaran
+    Managemen Gedung dan Ruang
+    Manajemen Jadwal Ruangan
+}
+
+class SIAKAD_UNJ {
+    Pelaporan Kinerja Dosen/Tendik
+    Validasi Gaji PTNBH
+    Pencatatan Kerjasama
+    Pengajuan Draft Kerjasama 
+    Pendaftaran Sertifikasi Profesi
+    Indeks Kinerja Utama
+    Detail Status Perkuliahan Mahasiswa
+    Managemen Gedung dan Ruang
+    Manajemen Jadwal Ruangan
+    Indeks Kinerja Utama Berdampak
+    Pendaftaran Bimbingan Konseling
+}
+
+class SIPEG_UNJ {
+    Pelaporan Kinerja Dosen/Tendik
+    Validasi Gaji PTNBH
+    Mengidentifikasi Resiko
+    Evaluasi Resiko
+    Validasi Resiko
+    Indeks Kinerja Utama Berdampak
+    Pencatatan dan Dokumentasi Surat Antar Unit
+    Penjadwalan Rapat/Kegiatan dan Dokumentasi 4 Unsur Kegiatan
+    Pencatatan Kehadiran Secara Online Pegawai UNJ dan Tenaga Kependidikan
+    Pengajuan Surat Kegiatan Akademik Mahasiswa dan Surat Keterangan, Verifikasi, Approval dan Pencetakan Surat
+    Pencatatan, Dokumentasi dan Pengarsipan terkait Informasi Hukum Universitas Negeri Jakarta
+    Pelaporan dan Rekapitulasi Data Kehadiran Pegawai UNJ dari Fingerprint dan Absensi Online Untuk Perhitungan Uang Makan dan Insentif Triwulan
+    Pencatatan Riwayat Kesehatan Pegawai , Pensiunan, Keluarga Pegawai dan Mahasiswa Universitas Negeri Jakarta Terkait Layanan Kesehatan pada Klinik Pratama UNJ
+    Manajemen Layanan Kesehatan
+    Layanan Administrasi Pencatatan Kegiatan Kerja di luar Kampus UNJ
+}
+
+class SISTER_Kemdiktisaintek {
+    Pelaporan Kinerja Dosen/Tendik
+    Validasi Gaji PTNBH
+    Indeks Kinerja Utama
+    Indeks Kinerja Utama Berdampak
+    CRUD, Pencatatan, Pengarsipan,  Rekapitulasi dan Statistik Data Pegawai UNJ
+    API Sipeg
+    Riwayat (Pendidikan, Jabatan, Kepangkatan, Diklat, Penugasan, KGB, Purnabakti) terkait Data Pegawai UNJ
+    Layanan Administrasi Kepegawaian
+}
+
+class Laporankerma_Kemdiktisaintek {
+    Pencatatan Kerjasama
+    Pengajuan Draft Kerjasama 
+}
+
+class Feeder_PDDIKTI {
+    Monitoring Data Feeder
+    Pencatatan Kerjasama
+    Pengajuan Draft Kerjasama 
+    Indeks Kinerja Utama
+    Indeks Kinerja Utama Berdampak
+}
+
+class Multibank {
+    Tagihan Akademik
+    Tagihan Non-Akademik
+    Dispensasi
+    Pendaftaran Sertifikasi Profesi
+}
+
+class Standalone {
+    Audit Mutu Internal
+    EGOM
+    Evaluasi Kepuasan Siswa Terhadap Sarpras
+    Evaluasi Kepuasan Orang Tua 
+}
+
+class SIKERMA {
+    Indeks Kinerja Utama
+}
+
+class Tracer{
+    Indeks Kinerja Utama
+    Indeks Kinerja Utama Berdampak
+}
+
+class RPS {
+    Indeks Kinerja Utama
+    Indeks Kinerja Utama Berdampak
+}
+
+' === Relasi Berdasarkan Tabel Integrasi Sistem ===
+
+' [1] Pelaporan Kinerja Dosen/Tendik & Validasi Gaji PTNBH
+SIAKAD_UNJ <..> SIPEG_UNJ
+SIAKAD_UNJ <..> SISTER_Kemdiktisaintek
+SIPEG_UNJ <..> SISTER_Kemdiktisaintek
+
+' [2] Pencatatan & Pengajuan Kerjasama
+SIAKAD_UNJ <..> Laporankerma_Kemdiktisaintek
+Feeder_PDDIKTI <..> Laporankerma_Kemdiktisaintek
+
+' [3] Sinkronisasi Data SIAKAD <-> Feeder PDDIKTI
+SIAKAD_UNJ <..> Feeder_PDDIKTI : Sinkronisasi Data
+
+' [4] Pendaftaran Sertifikasi Profesi
+SIAKAD_UNJ <..> Multibank : Sertifikasi Profesi
+
+' [5] Manajemen Gedung dan Ruangan
+SIAKAD_UNJ <..> SAKU_UNJ : Manajemen Gedung & Ruangan
+
+' [6] Indeks Kinerja Utama
+' (Integrasi: SIAKAD, SISTER, PDDIKTI, SIKERMA, TRACER, RPS)
+SIAKAD_UNJ <..> SIKERMA
+SIAKAD_UNJ <..> Tracer
+SIAKAD_UNJ <..> RPS
+SISTER_Kemdiktisaintek <..> Feeder_PDDIKTI
+SISTER_Kemdiktisaintek <..> SIKERMA
+SISTER_Kemdiktisaintek <..> Tracer
+SISTER_Kemdiktisaintek <..> RPS
+Feeder_PDDIKTI <..> SIKERMA
+Feeder_PDDIKTI <..> Tracer
+Feeder_PDDIKTI <..> RPS
+SIKERMA <..> Tracer
+SIKERMA <..> RPS
+Tracer <..> RPS
+
+' [7] Indeks Kinerja Utama Berdampak (tambahan relasi SIPEG)
+' (Integrasi: SIAKAD, SISTER, PDDIKTI, SIPEG, TRACER, RPS)
+SIPEG_UNJ <..> Feeder_PDDIKTI
+SIPEG_UNJ <..> Tracer
+SIPEG_UNJ <..> RPS
+
+
+@enduml

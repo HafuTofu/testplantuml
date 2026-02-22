@@ -1,0 +1,385 @@
+@startuml UNJ_Application_Architecture_V1
+skinparam style strictuml
+skinparam shadowing false
+skinparam linetype ortho
+skinparam packageStyle rectangle
+hide empty members
+hide stereotype
+left to right direction
+
+skinparam class {
+  BorderColor #444444
+  RoundCorner 8
+}
+
+skinparam class<<hub>> {
+  BackgroundColor #E8F2FF
+  BorderColor #2D6CDF
+}
+
+skinparam class<<source>> {
+  BackgroundColor #FFF7E6
+  BorderColor #C98A00
+}
+
+skinparam class<<discontinued>> {
+  BackgroundColor #F1F1F1
+  BorderColor #9C9C9C
+}
+
+title Arsitektur Aplikasi PUSTIKOM UNJ (Backbone vs Satellite)
+
+legend right
+  == Keterangan ==
+  Panah: Sumber Data -> Aplikasi Tujuan
+  Biru: Backbone/Hub Integrasi
+  Kuning: Sumber Eksternal/Referensi
+  Abu-abu: Discontinued
+  Catatan: "Sistem Informasi Dispensasi UKT" muncul 2x di CSV, ditampilkan 1 node
+endlegend
+
+package "Backbone / Hub Integrasi" {
+  class "SIAKAD" as app_siakad <<hub>> {
+    KRS, nilai, jadwal, transkrip
+  }
+
+  class "SIPEG" as app_sipeg <<hub>> {
+    Data pegawai, layanan kepegawaian
+  }
+
+  class "SAKU" as app_saku <<hub>> {
+    Pembayaran, monev, laporan keuangan
+  }
+
+  class "SIRENA" as app_sirena <<hub>> {
+    Perjanjian kinerja, e-POK, monev
+  }
+
+  class "SIKERMA" as app_sikerma <<hub>> {
+    Pencatatan dan draft kerja sama
+  }
+
+  class "TRACER STUDY" as app_tracer <<hub>> {
+    Data lulusan dan masa tunggu kerja
+  }
+
+  class "SiRPS" as app_rps <<hub>> {
+    Rencana Pembelajaran Semester
+  }
+
+  class "Data Presensi (DASI)" as app_dasi_data <<hub>> {
+    Rekap presensi untuk insentif
+  }
+
+  class "Satu Data UNJ" as app_satudata <<hub>> {
+    Data institusi terpusat dan tervalidasi
+  }
+}
+
+package "Sumber Data Eksternal / Referensi" {
+  class "Feeder PDDIKTI" as src_pddikti <<source>> {
+    Data feeder nasional
+  }
+
+  class "SISTER Kemdiktisaintek" as src_sister <<source>> {
+    Data kinerja dosen/tendik
+  }
+
+  class "Laporankerma Kemdiktisaintek" as src_laporankerma <<source>> {
+    Referensi data kerja sama
+  }
+
+  class "Multibank" as src_multibank <<source>> {
+    Tagihan akademik/non-akademik
+  }
+
+  class "Standalone" as src_standalone <<source>> {
+    Audit mutu Labschool
+  }
+}
+
+package "Satellite Applications" {
+  package "Akademik & Pembelajaran" {
+    class "SIPMA" as app_sipma {
+      Pendaftaran dan seleksi pertukaran
+    }
+
+    class "SKPI" as app_skpi {
+      Penerbitan dan validasi SKPI
+    }
+
+    class "SIMTA" as app_simta {
+      Pendaftaran hingga sidang akhir
+    }
+
+    class "Sistem Informasi Dispensasi UKT" as app_disp_ukt {
+      Pengajuan dan persetujuan dispensasi
+    }
+
+    class "LMS Pembelajaran Online" as app_lms {
+      Materi, kuis, forum diskusi
+    }
+
+    class "PENMABA" as app_penmaba {
+      Penerimaan mahasiswa baru
+    }
+
+    class "SIKUR" as app_sikur {
+      Struktur dan pembaruan kurikulum
+    }
+
+    class "SIPP" as app_sipp {
+      Proposal dan laporan penelitian/pengabdian
+    }
+
+    class "SIUKT" as app_siukt {
+      Penetapan golongan dan transaksi UKT
+    }
+
+    class "SIPERMAWA" as app_sipermawa {
+      Pengajuan, verifikasi, cetak surat
+    }
+
+    class "SIMPRESMAWA" as app_simpresmawa {
+      Verifikasi prestasi akademik/non-akademik
+    }
+
+    class "SITEDI" as app_sitedi {
+      Sinkronisasi data SIAKAD-PDDIKTI
+    }
+
+    class "BTD-SIPASCA" as app_btd {
+      Monitoring bimbingan pascasarjana
+    }
+
+    class "RPL" as app_rpl {
+      Konversi rekognisi pembelajaran lampau
+    }
+
+    class "SISCA" as app_sisca {
+      Seleksi calon mahasiswa pascasarjana
+    }
+
+    class "Digital Library UNJ" as app_digilib {
+      Akses koleksi digital dan repository
+    }
+
+    class "PANTAU UNJ" as app_pantau {
+      Pantau status perkuliahan mahasiswa
+    }
+
+    class "PLPBK Konseling" as app_plpbk {
+      Pendaftaran layanan konseling
+    }
+  }
+
+  package "SDM, Tata Kelola & Layanan" {
+    class "MyUNJ - SSO" as app_sso {
+      Profil email Microsoft
+    }
+
+    class "SIPERAN" as app_siperan {
+      Surat, rapat, undangan, absensi, notulensi
+    }
+
+    class "Absensi Pegawai (DASI)" as app_dasi_absen {
+      Absensi online dosen dan tendik
+    }
+
+    class "APT/SPMI" as app_aptspmi {
+      Monitoring indikator pengawasan APT
+    }
+
+    class "Remunerasi" as app_remun {
+      Pelaporan kinerja dan validasi gaji
+    }
+
+    class "SILAW" as app_silaw {
+      Arsip dan dokumentasi hukum
+    }
+
+    class "SPM" as app_spm {
+      Dokumen audit dan evaluasi mutu
+    }
+
+    class "SIMONEV" as app_simonev {
+      Monitoring capaian indikator unit
+    }
+
+    class "SINGA" as app_singa {
+      Pengawasan akademik dan administratif
+    }
+
+    class "SIPETIK" as app_sipetik {
+      Tiket pengaduan dan layanan TIK
+    }
+
+    class "e-SPPD" as app_esppd {
+      Pencatatan kegiatan dinas luar kampus
+    }
+
+    class "LAD" as app_lad {
+      Arsip digital terstruktur
+    }
+
+    class "Sistem Jurnal UNJ" as app_jurnal {
+      Submission, review, publikasi jurnal
+    }
+
+    class "Verifikasi Sertifikat LCU" as app_verif_lcu {
+      Validasi keaslian sertifikat LCU
+    }
+
+    class "Verifikasi Sertifikat PPG" as app_verif_ppg {
+      Validasi dan penerbitan sertifikat PPG
+    }
+
+    class "KPMS" as app_kpms {
+      Riwayat kesehatan dan layanan klinik
+    }
+
+    class "SIMRISK" as app_simrisk {
+      Identifikasi, evaluasi, validasi risiko
+    }
+
+    class "SIMGURU" as app_simguru {
+      Manajemen gedung, ruang, jadwal
+    }
+  }
+
+  package "Keuangan, Aset & Pengadaan" {
+    class "SAKU PTNBH (Persediaan)" as app_saku_persediaan {
+      Penatausahaan barang habis pakai
+    }
+
+    class "SAKU PTNBH (Gudang)" as app_saku_gudang {
+      Barang masuk dan barang terpakai
+    }
+
+    class "SIMPAN" as app_simpan {
+      Pengelolaan pendapatan universitas
+    }
+
+    class "SAKU Tagihan" as app_saku_tagihan {
+      Tagihan akademik/non-akademik/dispensasi
+    }
+
+    class "SAKU Jurnal" as app_saku_jurnal {
+      Pencatatan jurnal keuangan
+    }
+
+    class "SIUKOM" as app_siukom {
+      Pendaftaran sertifikasi profesi
+    }
+
+    class "Pelaporan Aset & Persediaan Internal" as app_aset_internal <<discontinued>> {
+      Monitoring pengadaan dan inventaris
+    }
+
+    class "SIAPEL" as app_siapel <<discontinued>> {
+      Proses pengadaan barang/jasa
+    }
+  }
+
+  package "Analitik" {
+    class "Dashboard IKU" as app_iku {
+      Indeks Kinerja Utama
+    }
+
+    class "Dashboard IKU Berdampak" as app_iku_berdampak {
+      Indeks Kinerja Utama Berdampak
+    }
+  }
+
+  package "Labschool" {
+    class "PSB Labschool" as app_psb {
+      Penerimaan siswa baru
+    }
+
+    class "SIMUTU Labschool" as app_simutu_labs {
+      Audit mutu, EGOM, evaluasi kepuasan
+    }
+
+    class "SIMPEG Labschool" as app_simpeg_labs {
+      Data pegawai Labschool
+    }
+
+    class "SIMPRES Labschool" as app_simpres_labs {
+      Capaian prestasi siswa
+    }
+  }
+}
+
+' Integrasi berdasarkan Data Tarikan (Sumber -> Aplikasi)
+app_sipeg --> app_siperan
+app_sipeg --> app_dasi_absen
+src_pddikti --> app_aptspmi
+app_sipeg --> app_sipermawa
+app_siakad --> app_sipermawa
+
+app_saku --> app_saku_gudang
+app_sirena --> app_saku
+app_saku --> app_sirena
+
+app_siakad --> app_remun
+app_sipeg --> app_remun
+src_sister --> app_remun
+src_sister --> app_sipeg
+app_sipeg --> app_silaw
+
+src_laporankerma --> app_sikerma
+app_siakad --> app_sikerma
+src_pddikti --> app_sikerma
+
+app_siakad --> app_sitedi
+src_pddikti --> app_sitedi
+app_sipeg --> app_dasi_data
+
+app_sipeg --> app_kpms
+app_siakad --> app_kpms
+
+src_multibank --> app_saku_tagihan
+app_siakad --> app_siukom
+src_multibank --> app_siukom
+
+src_standalone --> app_simutu_labs
+
+app_siakad --> app_iku
+src_sister --> app_iku
+src_pddikti --> app_iku
+app_sikerma --> app_iku
+app_tracer --> app_iku
+app_rps --> app_iku
+
+app_siakad --> app_pantau
+app_sipeg --> app_simrisk
+app_siakad --> app_simguru
+app_saku --> app_simguru
+
+app_siakad --> app_satudata
+src_pddikti --> app_satudata
+app_sipeg --> app_satudata
+app_dasi_data --> app_satudata
+app_tracer --> app_satudata
+app_saku --> app_satudata
+app_sikerma --> app_satudata
+src_sister --> app_satudata
+
+app_sipeg --> app_esppd
+
+app_siakad --> app_iku_berdampak
+src_sister --> app_iku_berdampak
+src_pddikti --> app_iku_berdampak
+app_sipeg --> app_iku_berdampak
+app_tracer --> app_iku_berdampak
+app_rps --> app_iku_berdampak
+
+app_siakad --> app_plpbk
+
+' Penataan visual backbone ke satelit (tanpa makna integrasi)
+app_siakad -[hidden]- app_sipeg
+app_sipeg -[hidden]- app_saku
+app_saku -[hidden]- app_sirena
+app_sirena -[hidden]- app_satudata
+
+@enduml

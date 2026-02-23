@@ -1,0 +1,64 @@
+Sistem Informasi;Deskripsi;Data Tarikan;Detail Modul Aplikasi;PJ;
+Sistem Informasi Akademik (SIAKAD);Pengelolaan seluruh proses akademik mahasiswa mulai dari KRS, nilai, jadwal kuliah, hingga transkrip secara terintegrasi;;;;
+Sistem Informasi Pertukaran Mahasiswa (SIPMA);Portal pendaftaran, seleksi, dan pemantauan kegiatan pertukaran mahasiswa antar perguruan tinggi;;;;
+Sistem Informasi SKPI (SKPI);Penerbitan dan validasi Surat Keterangan Pendamping Ijazah berbasis data prestasi dan aktivitas mahasiswa;;;;
+Sistem Informasi RPS (SiRPS);Pengelolaan otomatisasi digital dalam penyusunan Rencana Pembelajaran Semester untuk dosen;;;;
+Sistem Informasi Manajemen Tugas Akhir (SIMTA);Pengelolaan seluruh tahapan tugas akhir mahasiswa dari pendaftaran, pembimbingan, hingga penilaian sidang akhir;;;;
+Sistem Informasi Persuratan, Rapat dan Notulen (SIPERAN);Pengelolaan surat masuk/keluar, jadwal kegiatan, serta dokumentasi notulen dan daftar hadir secara elektronik;SIPEG UNJ;Pencatatan dan Dokumentasi transaksi Surat antar Unit, Penjadwalan Rapat/Kegiatan dan Dokumentasi 4 Unsur Kegiatan (Undangan, Absensi, Notulensi dan Gambar);Enjang Rochmana;
+Absensi Pegawai (DASI);Pencatatan dan pemantauan kehadiran pegawai menggunakan sistem absensi digital secara real time;SIPEG UNJ;Pencatatan Kehadiran secara online Pegawai UNJ (Khusus Tenaga Pengajar) dan Tenaga Kependidikan sesuai aturan yang berlaku;Enjang Rochmana;
+MyUNJ - Single Sign On (SSO);Portal akses tunggal ke seluruh aplikasi internal universitas melalui satu akun terverifikasi;;Detail profil email microsoft;Imam FIrmansyah;
+Sistem Informasi APT/SPMI;Pengelolaan data akreditasi dan penjaminan mutu internal melalui pengumpulan serta pelaporan dokumen SPMI secara digital;Feeder PDDIKTI;Monitoring data feeder sesuai dengan 10 indikator pengawasan APT;Didin Muhidin;
+Sistem Informasi Dispensasi UKT;Pengajuan dan persetujuan dispensasi pembayaran UKT secara online dan terintegrasi dengan keuangan;;;;
+LMS Pembelajaran Online;Platform pembelajaran daring untuk dosen dan mahasiswa dengan fitur materi, kuis, dan forum diskusi;;;;
+Pendaftaran Mahasiswa Baru (PENMABA);Pengelolaan seluruh proses penerimaan mahasiswa baru mulai dari pendaftaran hingga verifikasi akhir;;;;
+Sistem Informasi Kurikulum (SIKUR);Pengelolaan dan pemantauan struktur serta pembaruan kurikulum program studi;;;;
+Sistem Informasi Penelitian dan Pengabdian Masyarakat (SIPP);Pendataan dan pengelolaan proposal, pelaksanaan, dan pelaporan kegiatan penelitian serta pengabdian dosen;;;;
+Sistem Informasi UKT (SIUKT);Pengelolaan data pembayaran UKT mahasiswa termasuk penetapan golongan dan monitoring transaksi;;;;
+Sistem Persuratan Mahasiswa (SIPERMAWA);Layanan surat menyurat untuk mahasiswa seperti surat aktif kuliah atau keterangan akademik;SIPEG UNJ, SIAKAD;Pengajuan Surat kegiatan akademik mahasiswa dan Surat Keterangan, Verifikasi, Approval  dan Pencetakan Surat;Enjang Rochmana;
+Sistem Prestasi Mahasiswa (SIMPRESMAWA);Pencatatan dan verifikasi capaian prestasi mahasiswa baik akademik maupun non-akademik.;;;;
+Sistem Informasi Penulusuran Study Alumni (TRACER STUDY);Pencatatan data lulusan untuk analisis masa tunggu kerja, relevansi kompetensi, dan kinerja alumni;;;;
+SAKU PTNBH (Persediaan);Pengelolaan dan penatausahaan barang persediaan (barang habis pakai) secara sistematis untuk mendukung akurasi pelaporan nilai aset lancar universitas dalam laporan keuangan;;;;
+SAKU PTNBH (Gudang);Manajemen operasional gudang yang mencakup proses penerimaan, penyimpanan, hingga pendistribusian barang serta monitoring mutasi stok secara real-time dan transparan.;SAKU;Barang Masuk dan Barang Terpakai;Alfin;
+SAKU;Sistem inti akuntansi untuk pengelolaan transaksi, penyusunan buku besar, dan standarisasi laporan keuangan konsolidasian universitas sesuai standar akuntansi PTNBH;SIRENA UNJ;Pengajuan Pembayaran, Monev Keuangan, Permintaan Slip Gaji, Permintaan eFaktur, Permintaan LHI, Permintaan Kwitansi, Laporan Keuangan;Didin Muhidin;
+Perencanaan (SIRENA);Integrasi perencanaan program dan anggaran unit kerja dengan target kinerja tahunan universitas.;SAKU UNJ;Perjanjian Kinerja Rektor dan Unit/Fakultas, Pembuatan E-POK, Monev Anggaran;Didin Muhidin;
+Sistem Informasi Remunerasi (Remunerasi);Pencatatan capaian kinerja dan tunjangan kinerja pegawai berdasarkan aktivitas dan capaian kerja.;SIAKAD UNJ, SIPEG UNJ, SISTER Kemdiktisaintek;Pelaporan Kinerja Dosen/Tendik, Validasi Gaji PTNBH;Didin Muhidin & Mas Irfan;
+Sistem Informasi Pegawai (SIPEG);Pengelolaan data kepegawaian, jabatan, dan riwayat kerja seluruh tenaga pendidik dan kependidikan.;SISTER Kemdiktisaintek;"* CRUD, Pencatatan, Pengarsipan,  Rekapitulasi dan Statistik Data Pegawai UNJ
+* API Sipeg
+* Riwayat (Pendidikan, Jabatan, Kepangkatan, Diklat, Penugasan, KGB, Purnabakti) terkait Data Pegawai UNJ
+* Layanan Administrasi Kepegawaian";Enjang Rochmana;
+Sistem Informasi Hukum dan Tata Laksana (SILAW);Platform manajemen dokumen hukum, kebijakan, dan tata naskah dinas universitas.;SIPEG UNJ;Pencatatan, Dokumentasi dan Pengarsipan terkait Informasi Hukum Universitas Negeri Jakarta;Enjang Rochmana;
+Sistem Informasi Kerjasama (SIKERMA);Mengelola data dan dokumen perjanjian kerja sama dengan mitra nasional maupun internasional.;Laporankerma kemdiktisaintek, SIAKAD UNJ, Feeder PDDIKTI;Pencatatan kerjasama, pengajuan draft kerjasama oleh mitra;Didin Muhidin;
+Sistem Verifikasi Sertfikat LCU;Verifikasi keaslian sertifikat Lembaga Sertifikasi Universitas secara daring.;;;;
+Sistem Verifikasi Sertifikat PPG;Verifikasi validasi dan penerbitan sertifikat Program Profesi Guru secara elektronik.;;;;
+Sistem Informasi Dispensasi UKT;Sistem pengajuan, verifikasi, dan persetujuan keringanan atau penundaan pembayaran UKT mahasiswa secara daring.;;;;
+Sistem Informasi Pelaporan Aset dan Persediaan Internal;Memantau pengadaan, distribusi, dan pelaporan aset serta inventaris universitas.;;;;Discontinued
+Sistem Informasi Integrasi PDDIKTI (SITEDI);Sinkronisasi data akademik universitas dengan sistem nasional PDDIKTI secara otomatis.;SIAKAD UNJ, Feeder PDDIKTI;Sinkronisasi data SIAKAD UNJ dengan Feeder PDDIKTI;Didin Muhidin;
+Sistem Informasi Pendapatan (SIMPAN);Mengelola data pendapatan universitas dari berbagai sumber untuk mendukung laporan keuangan.;;;;
+Bimbingan Tesis dan Disertasi Pascasarjana (BTD-SIPASCA);Memfasilitasi pembimbingan dan monitoring kemajuan penelitian mahasiswa pascasarjana.;;;;
+Sistem Informasi Pelayanan TIK (SIPETIK);Menyediakan sistem tiket layanan untuk pengaduan, permintaan, dan pemeliharaan infrastruktur TIK.;;;;
+Sistem Penjaminan Mutu (SPM);Mengelola dokumen, audit, dan evaluasi kegiatan mutu akademik di seluruh unit.;;;;
+RPL (Rancangan Pembelajaran Lampau);Menilai dan mengonversi pengalaman belajar atau kerja sebelumnya menjadi pengakuan akademik formal.;;;;
+Data Presensi (DASI);Menyimpan dan menganalisis data kehadiran pegawai dan dosen untuk keperluan administrasi.;SIPEG UNJ;Pelaporan dan Rekapitulasi data Kehadiran Pegawai UNJ dari Fingerprint dan Absensi online untuk perhitungan Uang makan dan Insentif Triwulan;Enjang Rochmana;
+Klinik Pratama Management System (KPMS);Mengatur layanan kesehatan Klinik Pratama kampus mulai dari pendaftaran hingga rekam medis pasien.;SIPEG UNJ, SIAKAD;Pencatatan Riwayat Kesehatan Pegawai , Pensiunan, Keluarga Pegawai dan Mahasiswa Universitas Negeri Jakarta terkait layanan Kesehatan pada Klinik Pratama UNJ, Manajemen Layanan Kesehatan;Enjang Rochmana;
+Sistem Informasi Monitoring dan Evaluasi (SIMONEV);Memantau pelaksanaan program kerja dan capaian indikator kinerja unit di universitas.;;;;
+SAKU Tagihan;Mengelola pembuatan dan pelacakan tagihan keuangan unit atau individu di lingkungan universitas.;Multibank;Tagihan Akademik, Non Akademik, DIspensasi;Alfin;
+SAKU Jurnal;Mencatat transaksi jurnal keuangan sebagai bagian dari sistem akuntansi universitas.;;;;
+Sistem Informasi Uji Kompetensi LSPP1 (SIUKOM);Mengelola administrasi dan hasil uji kompetensi di Lembaga Sertifikasi Profesi P1 universitas.;SIAKAD dan Multibank;Pendaftaran Sertifikasi Profesi;Alfin;
+PSB Labschool;Mengatur proses penerimaan siswa baru di sekolah Labschool yang berafiliasi dengan universitas.;;;;
+Sistem Informasi Penjaminan Mutu (SIMUTU) Labschool;Mengelola kegiatan audit mutu internal dan peningkatan kualitas pendidikan di Labschool.;Standalone;Audit Mutu Internal, EGOM, Evaluasi Kepuasan Siswa terhadap sarpras, Evaluasi Kepuasan Orang tua;Danan Danurwenda;
+Sistem Informasi Manajemen Pegawai (SIMPEG) Labschool;Menyimpan data pegawai dan mendukung proses kepegawaian di lingkungan Labschool.;;;;
+Sistem Manajemen Prestasi (SIMPRES) Labschool;Mencatat dan menilai capaian prestasi siswa di sekolah Labschool.;;;;
+Sistem Seleksi Pascasarjana (SISCA);Menangani pendaftaran dan seleksi calon mahasiswa pascasarjana secara daring.;;;;
+Sistem Informasi Pengawas (SINGA);Memfasilitasi pengawasan kegiatan akademik dan administratif oleh unit pengawas internal universitas.;;;;
+Sistem Aplikasi Pengadaan Langsung (SIAPEL);Sistem pengelolaan proses pengadaan barang dan jasa yang mencakup perencanaan, penawaran, evaluasi, hingga penetapan penyedia;;;;Discontinued
+Digital Library UNJ;Sistem perpustakaan digital yang menyediakan akses terintegrasi terhadap koleksi buku, karya ilmiah, repository institusi, dan sumber referensi.;;;;
+Dashboard IKU;Sistem pemantauan capaian IKU UNJ yang menyajikan data kinerja setiap unit secara real-time untuk mendukung evaluasi dan pengambilan keputusan strategis;SIAKAD, SISTER, PDDIKTI, SIKERMA, TRACER, RPS;Indeks Kinerja Utama;Alfin;
+PANTAU UNJ;Aplikasi bagi orang tua atau wali mahasiswa untuk memantau perkembangan akademik anaknya;SIAKAD;detail status perkuliahan mahasiswa;Imam Firmansyah;
+SIMRISK;Sistem informasi yang digunakan untuk mengelola identifikasi, analisis, pemantauan, dan mitigasi risiko organisasi secara terstruktur dan terdokumentasi.;SIPEG;Mengidentifikasi Resiko, Evaluasi Resiko, Validasi Resiko;Axel;
+SIMGURU;Sistem informasi yang mendukung pengelolaan data dan layanan terkait gedung dan ruang secara terintegrasi.;SIAKAD, SAKU;Managemen Gedung dan Ruang, manajemen jadwal ruangan;Dhika;
+Satu Data UNJ;Dashboard data institusi yang menyajikan data terpusat, terstandar, dan tervalidasi sebagai sumber rujukan resmi universitas.;SIAKAD, PDDIKTI, SIPEG, DASI, Tracer Study, SAKU, SIKERMA, SISTER;;Dhika;
+e-SPPD;Sistem Pengelolaan Perjalanan Dinas Elektronik yang mendigitalisasi proses pengajuan, persetujuan, hingga pelaporan perjalanan dinas secara terintegrasi.;SIPEG UNJ;Layanan Administrasi Pencatatan Kegiatan Kerja di luar Kampus UNJ;Enjang Rochmana;
+Dashboard IKU Berdampak;;SIAKAD, SISTER, PDDIKTI, SIPEG, TRACER, RPS;Indeks Kinerja Utama Berdampak;Alfin;
+LAD (Lemari Arsip Digital);Sistem pengelolaan arsip digital yang menyediakan penyimpanan, pencarian, dan pengamanan dokumen secara terstruktur dan terdokumentasi.;;;;
+Sistem Jurnal UNJ;Sistem pengelolaan dan publikasi jurnal ilmiah yang mendukung proses submission, review, hingga penerbitan artikel secara elektronik.;;;;
+PLPBK Konseling;Sistem aplikasi layanan bimbingan konseling pikologi;SIAKAD;Pendaftaran Bimbingan Konseling;Alfin;
